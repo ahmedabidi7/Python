@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <div class="main">
+        {% for x in range(0,l): %}
+        {% for y in range(0,h): %}
+        {% if x%2 == y%2 %}
+        <div class="box" style="background-color: {{color1}};"></div>
+        {% endif %}
+        {% if x%2 != y%2 %}
+        <div class="box" style="background-color: {{color2}};"></div>
+        {% endif %}
+        {% endfor %}
+        <br>
+        {% endfor %}
+    </div>
+</body>
+</html>

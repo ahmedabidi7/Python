@@ -1,0 +1,9 @@
+.main {
+    width: auto;
+    height: auto;
+}
+.box {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
