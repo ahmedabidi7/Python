@@ -1,0 +1,17 @@
+insert into names (first_name,last_name,email) values 
+("jhon","cena","cena@gmail.com"), 
+("elon","musk","musk@gmail.com"), 
+("vladimir","putin","putin@gmail.com");
+
+select * from names;
+
+select * from names where email="cena@gmail.com";
+
+select * from names where id=3;
+
+update names set last_name= "Pancakes" where id= 3;
+
+delete from names where id=2;
+
+select * from names order by first_name;
+

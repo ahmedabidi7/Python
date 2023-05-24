@@ -1,0 +1,5 @@
+select * from names;
+insert into names (name) values ("ahmed abidi");
+insert into names (name) values ("red ninja"), ("yellow ninja"), ("black ninja");
+update names set name= "green ninja" where id= 3;
+delete from names where id=4;

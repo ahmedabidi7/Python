@@ -1,0 +1,32 @@
+insert into dojos (name) values 
+("Africa"), 
+("USA"), 
+("Europe");
+
+delete from dojos where id>0;
+
+insert into dojos (name) values 
+("Africa"), 
+("USA"), 
+("Europe");
+
+insert into ninjas (first_name,last_name,age,dojo_id) values 
+("ahmed","abidi",32,4), 
+("ali","white",28,4), 
+("aziz","green",18,4);
+
+insert into ninjas (first_name,last_name,age,dojo_id) values 
+("Andrew","Serrano",52,5), 
+("Nelson ","Hendrix",48,5), 
+("Elise ","Elise ",15,5);
+
+insert into ninjas (first_name,last_name,age,dojo_id) values 
+("Joseph ","Crosby",36,6), 
+("Lea ","Vargas",25,6), 
+("George ","George ",35,6);
+
+select * from ninjas where dojo_id=4;
+
+select * from ninjas where dojo_id=6;
+
+select * from ninjas order by id desc limit 1;
