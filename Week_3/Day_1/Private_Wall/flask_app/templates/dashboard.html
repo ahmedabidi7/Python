@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>LogReg</title>
+</head>
+
+<body>
+    <div class="row text-center p-4">
+        <h4>{{user.first_name}} Dashbord!</h4>
+        <a href="/logout" class="btn btn-danger">LOGOUT</a>
+    </div>
+    <div class="row text-center p-4">
+        <div class="col-6">
+            <h3>Messages:</h3>
+            <p>You have {{messages|length}} message(s)</p>
+            {%for message in messages%}
+            <p>Message from {{message.sender}} :</p>
+            <p>{{message.message}}</p>
+            <p><a href="/message/delete/{{message.id}}">Delete</a></p>
+            {%endfor%}
+        </div>
+        <div class="col-6">
+            <h3>Send Messages:</h3>
+            {%for other in others%}
+            <form action="/users/send" method="post">
+                <div class="form-group">
+                    <label for="">{{other.first_name}} {{other.last_name}}</label>
+                    <input type="text" name="message" class="form-control">
+                    <input name='s_user_id' type='hidden' value='{{user.id}}'>
+                    <input name='r_user_id' type='hidden' value='{{other.id}}'>
+                </div>
+                <input type="submit" value="Send" class="btn btn-secondary">
+            </form>
+            {%endfor%}
+        </div>
+    </div>
+</body>
+</html>
