@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>LogReg</title>
+</head>
+
+<body>
+    <div class="d-flex justify-content-between m-5">
+        <h2>Welcome, {{user.name}}</h2>
+        <div>
+            <a href="/books/new" class="btn btn-warning">Add book to my shelf</a>
+            <a href="/logout" class="btn btn-danger">LOGOUT</a>
+        </div>
+    </div>
+    <div class="m-5">
+        <h4>All posted books:</h4>
+        <table class="table table-striped text-center">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author Name</th>
+                <th>Posted By</th>
+            </tr>
+            {%for book in books%}
+            <tr>
+                <td>{{book.id}}</td>
+                <td><a href="/books/{{book.id}}">{{book.title}}</a></td>
+                <td>{{book.author}}</td>
+                <td>{{book.poster}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+</body>
+</html>
